@@ -5,6 +5,8 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>ContratException.h</itemPath>
+      <itemPath>Journal.h</itemPath>
+      <itemPath>Ouvrage.h</itemPath>
       <itemPath>Reference.h</itemPath>
       <itemPath>validationFormat.h</itemPath>
     </logicalFolder>
@@ -16,6 +18,8 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>ContratException.cpp</itemPath>
+      <itemPath>Journal.cpp</itemPath>
+      <itemPath>Ouvrage.cpp</itemPath>
       <itemPath>Reference.cpp</itemPath>
       <itemPath>gestionReferences.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -48,7 +52,15 @@
       </item>
       <item path="ContratException.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Journal.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Journal.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Ouvrage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Ouvrage.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Reference.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -87,7 +99,15 @@
       </item>
       <item path="ContratException.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Journal.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Journal.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Ouvrage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Ouvrage.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Reference.cpp" ex="false" tool="1" flavor2="0">
       </item>

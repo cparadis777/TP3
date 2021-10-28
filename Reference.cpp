@@ -16,6 +16,7 @@
 #include <iostream>
 #include <sstream>
 #include "ContratException.h"
+#include "validationFormat.h"
 
 /*!
  * \namespace biblio
@@ -40,6 +41,7 @@ namespace biblio
   public:
     Reference (std::string p_auteurs, std::string p_titre,
                int p_annee, std::string p_identifiant);                  //!< \brief Constructeur de la classe Reference
+    ~Reference ();                                                       //!< \brief Destructeur de la classe Reference
     std::string reqReferenceFormate ();                                  //!< \brief Méthode retournant un flux de string contenant la référence bibliographique formatée correctement.
     void modifierAnnee (int p_nouvelleAnnee);                            //!< Méthode mutatrice permettant de modifier l'année de publication de la référence bibliographique
     std::string reqAuteurs () const;                                     //!< \brief Accesseur permettant d'obtenir les auteurs de la référence
@@ -65,8 +67,19 @@ namespace biblio
   : m_auteurs (p_auteurs), m_titre (p_titre),
   m_annee (p_annee), m_identifiant (p_identifiant)
   {
-    PRECONDITION (util::validerFormatNom (auteur) == true);
+    PRECONDITION (!p_auteurs.empty ());
+    PRECONDITION (!p_titre.empty ());
+    PRECONDITION (!p_annee == 0);
+    PRECONDITION (!p_identifiant.empty ());
+
+    POSTCONDITION (m_auteurs == p_auteurs);
+    POSTCONDITION (m_titre == p_titre);
+    POSTCONDITION (m_annee == p_annee);
+    POSTCONDITION (m_identifiant == p_identifiant);
   };
+
+
+  Reference::~Reference () { }
 
 
   /*!
@@ -176,4 +189,6 @@ namespace biblio
             (p_reference1.m_identifiant == p_reference2.m_identifiant)
             );
   }
+
+
 }

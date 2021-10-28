@@ -36,6 +36,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/ContratException.o \
+	${OBJECTDIR}/Journal.o \
+	${OBJECTDIR}/Ouvrage.o \
 	${OBJECTDIR}/Reference.o \
 	${OBJECTDIR}/gestionReferences.o \
 	${OBJECTDIR}/main.o \
@@ -70,6 +72,16 @@ ${OBJECTDIR}/ContratException.o: ContratException.cpp nbproject/Makefile-${CND_C
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ContratException.o ContratException.cpp
+
+${OBJECTDIR}/Journal.o: Journal.cpp nbproject/Makefile-${CND_CONF}.mk
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Journal.o Journal.cpp
+
+${OBJECTDIR}/Ouvrage.o: Ouvrage.cpp nbproject/Makefile-${CND_CONF}.mk
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Ouvrage.o Ouvrage.cpp
 
 ${OBJECTDIR}/Reference.o: Reference.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}

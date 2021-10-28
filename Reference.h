@@ -29,6 +29,7 @@ namespace biblio
   public:
     Reference (std::string p_auteurs, std::string p_titre,
                int p_annee, std::string p_identifiant);
+    virtual ~Reference ();
     std::string reqReferenceFormate ();
     void modifierAnnee (int p_nouvelleAnnee);
     std::string reqAuteurs () const;

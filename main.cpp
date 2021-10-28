@@ -12,7 +12,10 @@
  */
 
 #include <cstdlib>
-
+#include "Reference.h"
+#include "validationFormat.h"
+#include <iostream>
+#include <string>
 using namespace std;
 
 
@@ -22,7 +25,11 @@ using namespace std;
 int
 main (int argc, char** argv)
 {
-
+  string auteur = "Richard Budynas";
+  bool test = util::validerFormatNom (auteur);
+  bool result = test == true;
+  std::cout <<  result << endl;
+  biblio::Reference ("Shigley's", auteur, 2014, "ISBN 978-0073398204");
   return 0;
 }
 

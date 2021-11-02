@@ -39,7 +39,7 @@ namespace biblio
     std::string reqEditeur () const;
     std::string reqVille () const;
 
-    std::string reqReferenceFormate () override;
+    std::string reqReferenceFormate () const override;
     Reference* clone () const override;
     friend bool operator == (const Ouvrage& p_ouvrage1, const Ouvrage & p_ouvrage2); //!< \brief Surcharge de l'opérateur == pour la classe Ouvrage
 
@@ -87,7 +87,7 @@ namespace biblio
    */
 
   std::string
-  Ouvrage::reqReferenceFormate ()
+  Ouvrage::reqReferenceFormate () const
   {
     std::ostringstream stream;
     stream << m_auteurs << ". " << m_titre << ". " << m_ville << ": " << m_editeur << ", " << m_annee <<

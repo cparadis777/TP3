@@ -46,7 +46,7 @@ namespace biblio
     int reqAnnee () const;                                               //!< \brief Accesseur permettant d'obtenir l'année de publication de la référence
     std::string reqIdentifiant () const;                                 //!< \brief Attribut contenant l'identifiant ISSN ou ISBN de l'ouvrage
 
-    std::string reqReferenceFormate ();                                  //!< \brief Méthode retournant un string contenant la référence bibliographique formatée correctement.
+    std::string reqReferenceFormate () const;                                  //!< \brief Méthode retournant un string contenant la référence bibliographique formatée correctement.
     void asgAnnee (int p_nouvelleAnnee);                                 //!< Méthode mutatrice permettant de modifier l'année de publication de la référence bibliographique
     friend bool operator == (const Reference& p_reference1, const Reference & p_reference2); //!< \brief Surcharge de l'opérateur == pour la classe Reference
   } ;
@@ -106,10 +106,11 @@ namespace biblio
    */
 
   std::string
-  Reference::reqReferenceFormate ()
+  Reference::reqReferenceFormate () const
   {
     std::ostringstream stream;
     stream << m_auteurs << ". " << m_titre << ". ";
+    INVARIANTS ();
     return stream.str ();
   }
 
@@ -123,6 +124,7 @@ namespace biblio
   void
   Reference::asgAnnee (int p_nouvelleAnnee)
   {
+    PRECONDITION (!p_nouvelleAnnee == 0);
     int nouvelleAnnee = p_nouvelleAnnee;
     if (nouvelleAnnee > 0)
       {
@@ -134,6 +136,7 @@ namespace biblio
         std::cout << "L'année entrée est invalide. "
                 "La référence n'a pas été modifiée" << std::endl;
       }
+    INVARIANTS ();
   }
 
 

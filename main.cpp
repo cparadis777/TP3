@@ -12,13 +12,16 @@
  */
 
 #include <cstdlib>
+#include <iostream>
+#include <string>
+
 #include "Reference.h"
 #include "Ouvrage.h"
 #include "Journal.h"
 #include "validationFormat.h"
 #include "ContratException.h"
-#include <iostream>
-#include <string>
+#include "Bibliographie.h"
+
 using namespace std;
 using namespace biblio;
 
@@ -36,18 +39,27 @@ main (int argc, char** argv)
   string ISBN = "ISBN 978-0073398204";
   string editeur = "McGraw-Hill";
   string ville = "New York";
+  string ISBN2 = "ISBN 978-0831136314";
 
-  biblio::Reference refR = biblio::Reference (titre, auteur, annee, ISBN);
-  //Journal refJ = Journal (titre, auteur, annee, ISBN, "revue", 1, 1, 1);
-  biblio::Journal refJ = biblio::Journal (titre, auteur, annee, ISBN, "test", 1, 1, 1);
-  biblio::Ouvrage refO1 = biblio::Ouvrage (titre, auteur, annee, ISBN, editeur, ville);
-  biblio::Ouvrage refO2 = biblio::Ouvrage (titre, auteur, annee, ISBN, editeur, ville);
-  Reference* refJClone = refJ.clone ();
-  cout << refJClone->reqAnnee () << endl;
-  cout << refO1.reqReferenceFormate () << endl;
-  cout << refO2.reqReferenceFormate () << endl;
-  bool check = (refO1 == refR);
-  cout << check << endl;
+  string titre2 = "Nature";
+  string auteur2 = "Aucun";
+  string ISSN = "ISSN 1636-1241";
+  int annee2 = 2010;
+  int volume = 1;
+  int numero = 10;
+  int page = 292;
+
+  Bibliographie bib;
+  Ouvrage ref = Ouvrage (titre, auteur, annee, ISBN, editeur, ville);
+  Journal ref2 = Journal (titre2, auteur2, annee2, ISSN, titre2,  volume, numero, page);
+  Ouvrage ref3 = Ouvrage ("Machinery Handbook", "E. Oberg", annee, ISBN2, editeur, ville);
+  bib.ajouterReference (ref);
+  bib.ajouterReference (ref2);
+  bib.ajouterReference (ref3);
+
+  cout << bib.reqBibliographieFormate () << endl;
+  int n = 1;
+  bool check = n == n;
 
   return 0;
 

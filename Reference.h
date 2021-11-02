@@ -31,7 +31,7 @@ namespace biblio
     std::string reqTitre () const;
     int reqAnnee () const;
     std::string reqIdentifiant () const;
-    virtual std::string reqReferenceFormate ();
+    virtual std::string reqReferenceFormate () const;
 
     void asgAnnee (int p_nouvelleAnnee);
     virtual Reference* clone () const;

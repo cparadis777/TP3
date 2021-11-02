@@ -42,7 +42,7 @@ namespace biblio
     int reqNumero () const;                                                         //!< \brief Accesseur permettant d'obtenir la numero du journal
     int reqPage () const;                                                           //!< \brief Accesseur permettant d'obtenir la page de l'article
 
-    std::string reqReferenceFormate () override;                                    //!< \brief Accesseur permettant d'obtenir la référence formatee de l'article
+    std::string reqReferenceFormate () const override;                              //!< \brief Accesseur permettant d'obtenir la référence formatee de l'article
     Reference* clone () const override;                                             //!< \brief Methode permettant de cloner l'objet
     friend bool operator == (const Journal& p_journal1, const Journal & p_Journal2); //!< \brief Surcharge de l'opérateur == pour la classe Journal
   } ;
@@ -141,7 +141,7 @@ namespace biblio
    */
 
   std::string
-  Journal::reqReferenceFormate ()
+  Journal::reqReferenceFormate () const
   {
     std::ostringstream stream;
     stream << m_auteurs << ", " << m_titre << ", " << m_annee <<

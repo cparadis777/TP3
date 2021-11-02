@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classbiblio_1_1_reference.html" title="Classe créant une référence bibliographique pour un ouvrage générique." alt="" coords="5,31,137,57"/>
+<area shape="rect" id="node2" href="$classbiblio_1_1_journal.html" title="Classe créant une référence bibliographique complète d&#39;un article de journal." alt="" coords="191,5,301,32"/>
+<area shape="rect" id="node3" href="$classbiblio_1_1_ouvrage.html" title="Classe créant une référence bibliographique complète d&#39;un ouvrage écrit." alt="" coords="185,56,307,83"/>
+</map>
